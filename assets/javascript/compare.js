@@ -29,6 +29,12 @@ $(document).ready(function(){
         var locAdd = $("#loc-address");
         var locWithin = $("#loc-within");
         var startDate = $("#start-date");
+        console.log(userKeyword);
+        console.log(locAdd);
+        console.log(locWithin);
+        console.log(startDate);
+
+
         var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=" + userKeyword
         "&location.address=" + locAdd
         "&location.within=" + locWithin
@@ -46,9 +52,9 @@ $(document).ready(function(){
 
 
 
-       dataB.ref().push({
-           searchRadius: searchRadius,
-           date: date
+       //dataB.ref().push({
+         //  searchRadius: searchRadius,
+           //date: date
        })
 
     })
