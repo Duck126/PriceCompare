@@ -9,12 +9,61 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+     <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>
 
-    <title>Hello, world!</title>
+        
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 30.2672, lng: -97.7431 },
+                zoom: 15
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            
+            service.getDetails({
+                placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+            }, function (place, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location
+                    });
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                            'Place ID: ' + place.place_id + '<br>' +
+                            place.formatted_address + '</div>');
+                        infowindow.open(map, this);
+                        
+                    });
+                }
+            });
+        }
+    </script>
+    <title>EventFull</title>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Eventfull</h1>
+        <p class="lead">This is and app that will help you find events that are going on in Austin.</p>
+        <hr class="my-4">
+        <p>This is and app that will help you find events that are going on in Austin.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        </p>
+    </div>
+
+    <div id="map"></div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
