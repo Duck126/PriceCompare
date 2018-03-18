@@ -15,8 +15,12 @@ $(document).ready(function(){
     var dataB = firebase.database();
     var searchCounter = 0;
 
+    //$("#action-1").click(function(e){
+        //do something
+        //e.preventDefault();
+       // });
 
-    $(".searchBtn").on("click", function(){
+    $("#submit-button").on("click", function(){
         //searchRadius = $("#mile-input").val().trim();
         //date = $("#date-input").val().trim();
        // time = $("#time-input").val().trim(); Needed? May have range of times for whole day. - JD
@@ -27,9 +31,9 @@ $(document).ready(function(){
         $("#inputs").empty();
         var searchID = searchCounter++;
         var userKeyword = $("#keyword").val().trim();
-        var locAdd = $("#loc-address");
-        var locWithin = $("#loc-within");
-        var startDate = $("#start-date");
+        var locAdd = "austin"; //$("#loc-address");
+        var locWithin = "10mi"; //$("#loc-within");
+        var startDate = "this_month";//$("#start-date");
         console.log("kw", userKeyword);
         console.log("loca", locAdd);
         console.log("locw", locWithin);
@@ -37,11 +41,12 @@ $(document).ready(function(){
 
         //you can test this URL by actually going to it https://www.eventbriteapi.com/v3/events/search/?q=crawfish+boil&location.address=austin&location.within=10mi&start_date.keyword=this_month&token=Y54FW5RHAXG43FRWR4QJ&expand=venue
         //the above is an example, feel free to play around with it. their api is cool.
-        var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=" + userKeyword
-        "&location.address=" + locAdd
-        "&location.within=" + locWithin
-        "&start_date.keyword=" + startDate
+        var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=" + userKeyword +
+        "&location.address=" + locAdd +
+        "&location.within=" + locWithin +
+        "&start_date.keyword=" + startDate +
         "&token=Y54FW5RHAXG43FRWR4QJ&expand=venue";
+        console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -50,17 +55,24 @@ $(document).ready(function(){
             .then(function(response) {
                 console.log(response);
 
-                var results = response.data;
+                //dataB.ref().push(response);
 
-                dataB.ref().push({
-                    id: searchID,
-                    data: response.data
-                })
+                //var results = response.data();
+                //console.log(results);
 
-            })
+                for (var i = 0; i < 10; i++) {
+                    dataB.ref().push({
+                        search: searchID,
+                        name: response.events[i].name.text,
+                        startDateAndTime: response.events[i].start.local,
+                        venueName: response.events[i].venue.name,
+                        venueAddress: response.events[i].venue.address,
+                    });
+                };
+            });
 
 
-    })
+    });
 
 })
 
