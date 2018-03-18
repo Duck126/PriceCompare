@@ -17,6 +17,7 @@
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+            //i broke the map somehow!!! :( 
     
 
         function initMap() {
@@ -63,37 +64,31 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Keyword:</span>
                 </div>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                <input type="text" id="keyword" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Starting Location:</span>
                 </div>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                <input type="text" id="loc-address" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
               </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Miles from starting location:
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">1</a>
-                  <a class="dropdown-item" href="#">5</a>
-                  <a class="dropdown-item" href="#">10</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Date of interest:
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Today</a>
-                  <a class="dropdown-item" href="#">Tomorrow</a>
-                  <a class="dropdown-item" href="#">This Week</a>
-                  <a class="dropdown-item" href="#">Next Week</a>
-                  <a class="dropdown-item" href="#">This Month</a>
-                  <a class="dropdown-item" href="#">Next Week</a>
-                </div>
-              </div>
+                <select class="form-control">
+                    <option>Radius:</option>
+                    <option val="1" id="1mi">1</option>
+                    <option val="5" id= "5mi">5</option>
+                    <option val="10" id="10mi">10</option>
+                  </select>
+
+                  <select class="form-control">
+                    <option>Date of Interest</option>
+                    <option>Today</option>
+                    <option>Tomorrow</option>
+                    <option>This Week</option>
+                    <option>Next Week</option>
+                    <option>This Month</option>
+                    <option>Next Month</option>
+                  </select>
+                
         </p>
     </div>
 

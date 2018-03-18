@@ -13,7 +13,7 @@ $(document).ready(function(){
     firebase.initializeApp(config);
 
     var dataB = firebase.database();
-    
+    var searchCounter = 0;
 
 
     $(".searchBtn").on("click", function(){
@@ -25,21 +25,23 @@ $(document).ready(function(){
 
    
         $("#inputs").empty();
+        var searchID = searchCounter++;
         var userKeyword = $("#keyword").val().trim();
         var locAdd = $("#loc-address");
         var locWithin = $("#loc-within");
         var startDate = $("#start-date");
-        console.log(userKeyword);
-        console.log(locAdd);
-        console.log(locWithin);
-        console.log(startDate);
+        console.log("kw", userKeyword);
+        console.log("loca", locAdd);
+        console.log("locw", locWithin);
+        console.log("date", startDate);
 
-
+        //you can test this URL by actually going to it https://www.eventbriteapi.com/v3/events/search/?q=crawfish+boil&location.address=austin&location.within=10mi&start_date.keyword=this_month&token=Y54FW5RHAXG43FRWR4QJ&expand=venue
+        //the above is an example, feel free to play around with it. their api is cool.
         var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=" + userKeyword
         "&location.address=" + locAdd
         "&location.within=" + locWithin
         "&start_date.keyword=" + startDate
-        "&token=Y54FW5RHAXG43FRWR4QJ&expand=venuee";
+        "&token=Y54FW5RHAXG43FRWR4QJ&expand=venue";
 
         $.ajax({
             url: queryURL,
@@ -50,19 +52,19 @@ $(document).ready(function(){
 
                 var results = response.data;
 
+                dataB.ref().push({
+                    id: searchID,
+                    data: response.data
+                })
 
+            })
 
-       //dataB.ref().push({
-         //  searchRadius: searchRadius,
-           //date: date
-       })
 
     })
-
 
 })
 
 
 
 
-//AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google API Key
+//AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google APIKey
