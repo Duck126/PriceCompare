@@ -10,15 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-     <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>
 
         
     <script>
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-            //i broke the map somehow!!! :( 
-    
 
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -28,7 +25,7 @@
 
             var infowindow = new google.maps.InfoWindow();
             var service = new google.maps.places.PlacesService(map);
-            
+
             service.getDetails({
                 placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
             }, function (place, status) {
@@ -42,7 +39,6 @@
                             'Place ID: ' + place.place_id + '<br>' +
                             place.formatted_address + '</div>');
                         infowindow.open(map, this);
-                        
                     });
                 }
             });
@@ -97,6 +93,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap">
+    </script>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
