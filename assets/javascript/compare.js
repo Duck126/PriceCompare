@@ -13,7 +13,6 @@ $(document).ready(function(){
     firebase.initializeApp(config);
 
     var dataB = firebase.database();
-    var searchCounter = 0;
 
     //$("#action-1").click(function(e){
         //do something
@@ -21,15 +20,7 @@ $(document).ready(function(){
        // });
 
     $("#submit-button").on("click", function(){
-        //searchRadius = $("#mile-input").val().trim();
-        //date = $("#date-input").val().trim();
-       // time = $("#time-input").val().trim(); Needed? May have range of times for whole day. - JD
-       // eventName = $("#event-input").val().trim(); Needed? May pull event name from API.  - JD
-
-
-   
         $("#inputs").empty();
-        var searchID = searchCounter++;
         var userKeyword = $("#keyword").val().trim();
         var locAdd = "austin"; //$("#loc-address");
         var locWithin = "10mi"; //$("#loc-within");
@@ -56,19 +47,19 @@ $(document).ready(function(){
                 console.log(response);
 
                 //dataB.ref().push(response);
-
                 //var results = response.data();
                 //console.log(results);
 
+                var searchData = [];
                 for (var i = 0; i < 10; i++) {
-                    dataB.ref().push({
-                        search: searchID,
-                        name: response.events[i].name.text,
-                        startDateAndTime: response.events[i].start.local,
-                        venueName: response.events[i].venue.name,
-                        venueAddress: response.events[i].venue.address,
-                    });
+
+                        //searchData.push(searchID);
+                        let name = searchData.push(response.events[i].name.text);
+                        let startDateAndTime = searchData.push(response.events[i].start.local);
+                        let venueName = searchData.push(response.events[i].venue.name);
+                        let venueAddress = searchData.push(response.events[i].venue.address);                                     
                 };
+                dataB.ref().push(searchData);
             });
 
 
