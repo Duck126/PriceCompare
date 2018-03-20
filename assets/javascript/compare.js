@@ -1,7 +1,6 @@
 $(document).ready(function(){
     //alert("working");
 
-    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
         authDomain: "price-compare-project-73cd9.firebaseapp.com",
@@ -54,27 +53,51 @@ $(document).ready(function(){
 
                 for (var i = 0; i < 10; i++) {
                         
-                        //searchData.push(searchID);
-                        //let (items + "i") = {
-                            let item = {
+                            var item = {
                             name : response.events[i].name.text,
                             startDateAndTime : response.events[i].start.local,
                             venueName : response.events[i].venue.name,
                             venueAddress : response.events[i].venue.address, 
                         }   
                         searchData.push(item);
-                        console.log(item);                                
+                               
                 };
                 dataB.ref().push(searchData);
             });
 
-            //$("#search-results").append("<li>" + trainName + "</li><li>" + destination + "</td><td>" + "Every " + frequency + " minutes" + "</td><td>" + nextTrainConverted + "</td><td>" + tMinutesTillTrain + "</td></tr>");
+            //var ref = dataB.ref();
+            //ref.on('value', gotData);
+
+            //function gotData(data) {
+              //  var name = 
+            //}
+
+
+            dataB.ref().on('value', function snapshotToArray(childSnapshot) {
+                console.log(childSnapshot);
+                let returnArr = [];
+            
+                childSnapshot.forEach(function(childSnapshot) {
+                    var displayItem = childSnapshot.val();
+                    displayItem.key = childSnapshot.key;
+            
+                    returnArr.push(displayItem);
+
+                });
+                console.log(returnArr);
+                return returnArr;
+
+            });
+
 
     });
 
 })
 
+                    //for (var i = 0; i < 10; i++) {
 
+                        //$("#search-results").append("<ul><li>" + returnArr[i].name + "</li><li>" + returnArr[i].startDateAndTime + "</li><li>" + returnArr[i].venueName +  "</li><li>" + returnArr[i].venueAddress + "</li></ol>");
+                    //};
 
 
 //AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google APIKey
