@@ -51,17 +51,24 @@ $(document).ready(function(){
                 //console.log(results);
 
                 var searchData = [];
-                for (var i = 0; i < 10; i++) {
 
+                for (var i = 0; i < 10; i++) {
+                        
                         //searchData.push(searchID);
-                        let name = searchData.push(response.events[i].name.text);
-                        let startDateAndTime = searchData.push(response.events[i].start.local);
-                        let venueName = searchData.push(response.events[i].venue.name);
-                        let venueAddress = searchData.push(response.events[i].venue.address);                                     
+                        //let (items + "i") = {
+                            let item = {
+                            name : response.events[i].name.text,
+                            startDateAndTime : response.events[i].start.local,
+                            venueName : response.events[i].venue.name,
+                            venueAddress : response.events[i].venue.address, 
+                        }   
+                        searchData.push(item);
+                        console.log(item);                                
                 };
                 dataB.ref().push(searchData);
             });
 
+            //$("#search-results").append("<li>" + trainName + "</li><li>" + destination + "</td><td>" + "Every " + frequency + " minutes" + "</td><td>" + nextTrainConverted + "</td><td>" + tMinutesTillTrain + "</td></tr>");
 
     });
 
