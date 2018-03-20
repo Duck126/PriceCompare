@@ -11,12 +11,6 @@
         padding: 0;
       }
 
-      @media only screen and (min-width: 600px) {
-        .side-nav {
-          display: none;
-        }
-    }
-
     .jumbotron{
       background: #EE6E73;
       color: #FFFFFF;
