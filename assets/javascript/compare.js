@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     //alert("working");
 
     var config = {
@@ -12,6 +12,7 @@ $(document).ready(function(){
     firebase.initializeApp(config);
 
     var dataB = firebase.database();
+    var eventFull = $("#eventFull");
 
     //$("#action-1").click(function(e){
         //do something
@@ -42,7 +43,7 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
         })
-            .then(function(response) {
+            .then(function (response) {
                 console.log(response);
 
                 //dataB.ref().push(response);
@@ -94,10 +95,26 @@ $(document).ready(function(){
 
 })
 
+
                     //for (var i = 0; i < 10; i++) {
 
                         //$("#search-results").append("<ul><li>" + returnArr[i].name + "</li><li>" + returnArr[i].startDateAndTime + "</li><li>" + returnArr[i].venueName +  "</li><li>" + returnArr[i].venueAddress + "</li></ol>");
                     //};
+//AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw
 
 
 //AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google APIKey
+
+//https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=YOUR_API_KEY
+//https://maps.googleapis.com/maps/api/place/details/output?parameters
+
+
+/*var urlPlaces = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw";
+
+//$.ajax({
+    //url: queryURL,
+    //method: "GET"
+//}).then(function (response) {
+
+//});*/
+
