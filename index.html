@@ -1,120 +1,116 @@
- <!Doctype html>
-<html>
-    <head> 
+<!doctype html>
+<html lang="en">
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Price Compare</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--materialize css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
+  
+  
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
         
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-    </head> 
-    <body>
-         <section id="one" class="container-fluid">
-           <nav class="navigation row">
-                <a href="#one"><img class="logo" ></a>
-               <div class="toggle">
-                    <i class="fa fa-bars"></i>
-               </div>
-               <ul class="nav">
-                    <li><a href="#one">Home</a></li>
-                    <li><a href="#two">About Us</a></li>
-                    <li><a href="#four">Product Search</a></li>
-                    <li><a href="#five">Contac Us</a></li>
-                 </ul>
-           </nav>
-        </section>
-        
-        <section id="two" class="container-fluid"> 
-            <h1 class="row title justify-content-center">Compare Your Best Deal</h1>
-            <form id="item-form">New Item</label>
-                <input type="text" id="item-input">
-                <br>
-                <input id="add-item" type="submit" value="Produtc-search">
-            </form>
-            <div class="row services">
-                <div class="icon-wrap col-lg-3" style="background-color:#3B94ED">
-                    <div class="icon-border" style="background-color:white">
-                        <img src="assets/images/amazon.png" class="icons"/>
-                    </div>
-                        <h3 class="goal">AMAZON</h3>
-                        <!-- <p class="iconP">CHEAPEST IN THE WORLD</p> -->
-                </div>
-                <div class="icon-wrap col-lg-3" style="background-color:rgb(13, 115, 218)">
-                    <div class="icon-border" style="background-color:white">
-                        <img src="assets/images/ebay.png" class="icons"/>
-                    </div>
-                        <h3 class="goal">EBAY<a></a></h3>
-                        <!-- <p class="iconP">CHEAPEST IN THE WORLD</p> -->
-                </div> 
-            </div>
-        </section>
-        <section>
-            <div id="findus">
-                <div class="col-md-3 rightSide">
-                    <h3>Team Memebers</h3>
-                    <hr>
-                    <a href="https://github.com/Chitica" target="_blank"><img src="assets/images/git.png" class="profiles"></a>
-                    <a href="https://github.com/jljones657" target="_blank"><img src="assets/images/git.png" class="profiles"></a>
-                    <a href="https://github.com/Chitica" target="_blank"><img src="assets/images/git.png" class="profiles"></a>
-                    <a href="https://github.com/Chitica" target="_blank"><img src="assets/images/git.png" class="profiles"></a>
-                </div>
-            </div>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 30.2672, lng: -97.7431 },
+                zoom: 15
+            });
 
-        </section>
-        <footer class="container-fluid">
-            <div class="footerTop">
-                <div class="column">
-                    <!-- <h3 class="design" style="background:#3399CC"> <i class=" fa fa-home"> Home</i></h3> -->
-                </div>
-                <div class="column">
-                    <h3 class="design" style="background:#E66338"> <i class=" fa fa-list"> Services</i></h3>
-                </div>
-                <div class="column">
-                    <h3 class="design" style="background:rgba(243, 101, 188, 0.89)"> <i class=" fa fa-address-book"> Reach us</i></h3>
-                </div>
-                <div class="column">
-                    <h3 class="design" style="background:rgb(245, 201, 26)"> <i class=" fa fa-handshake-o"> Projects</i></h3>
-                </div>
-            </div>
-            <div class="footerBottom">
-                    <div class="column2">
-                        <div class="footerBottomServices">
-                            <img class="logo2" src="imgs/SClogo.png">
-                        </div>
-                    </div>
-                    <div class="column2">
-                            <ul class="footerBottomServices">
-                                <li>Web Development</li>
-                                <li>Mobile Development</li>
-                                <li>Apps</li>
-                                
-                            </ul>
-                    </div>
-                    <div class="column2">
-                        <ul class="footerBottomServices">
-                            <p><span class="fa fa-phone"></span>Contact us</p> 
-                            <p><span class="fa fa-envelope"></span> E-mail us</p>
-                            <p><span class="fa fa-map-marker"></span>Find us</p>  
-                        </ul>
-                    </div>
-                    <div class="column2">
-                            <ul class="footerBottomServices">
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"> </a></li>
-                            </ul>
-                    </div>
+            var infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
 
-            </div>
-        </footer>
+            service.getDetails({
+                placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+            }, function (place, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location
+                    });
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                            'Place ID: ' + place.place_id + '<br>' +
+                            place.formatted_address + '</div>');
+                        infowindow.open(map, this);
+                    });
+                }
+            });
+        }
+    </script>
+    <title>EventFull</title>
+</head>
 
-        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="assets/javascript/styles.js"></script>              
-    </body>
- 
-</html> 
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-4 center-align">Eventfull</h1>
+        <p class="lead">This is and app that will help you find events that are going on in Austin.</p>
+        <hr class="my-4">
+        <p>This is and app that will help you find events that are going on in Austin.</p>
+        <p class="lead">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Keyword:</span>
+                </div>
+                <input type="text" id="keyword" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Starting Location:</span>
+                </div>
+                <input type="text" id="loc-address" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+              </div>
+                <select class="form-control">
+                    <option>Radius:</option>
+                    <option val="1" id="1mi">1</option>
+                    <option val="5" id= "5mi">5</option>
+                    <option val="10" id="10mi">10</option>
+                  </select>
+
+                  <select class="form-control">
+                    <option>Date of Interest</option>
+                    <option>Today</option>
+                    <option>Tomorrow</option>
+                    <option>This Week</option>
+                    <option>Next Week</option>
+                    <option>This Month</option>
+                    <option>Next Month</option>
+                  </select>
+
+                  <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
+                
+        </p>
+
+    </div>
+
+    <div id="map"></div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/materialize.js"></script>
+    <script type="text/javascript" src="assets/javascript/compare.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
