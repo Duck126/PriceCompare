@@ -64,7 +64,21 @@ $(document).ready(function(){
 
 })
 
-
+AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw 
 
 
 //AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google APIKey
+
+//https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=YOUR_API_KEY
+//https://maps.googleapis.com/maps/api/place/details/output?parameters
+
+
+var urlPlaces = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw";
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+
+  });
+

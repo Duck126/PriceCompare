@@ -9,6 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
+  
+  
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
         
@@ -50,12 +55,11 @@
 <body>
 
     <div class="jumbotron">
-        <h1 class="display-4">Eventfull</h1>
+        <h1 class="display-4 center-align">Eventfull</h1>
         <p class="lead">This is and app that will help you find events that are going on in Austin.</p>
         <hr class="my-4">
         <p>This is and app that will help you find events that are going on in Austin.</p>
         <p class="lead">
-            <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Keyword:</span>
@@ -84,8 +88,11 @@
                     <option>This Month</option>
                     <option>Next Month</option>
                   </select>
+
+                  <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
                 
         </p>
+
     </div>
 
     <div id="map"></div>
@@ -98,6 +105,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/materialize.js"></script>
     <script type="text/javascript" src="assets/javascript/compare.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
