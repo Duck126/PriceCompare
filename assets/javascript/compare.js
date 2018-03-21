@@ -52,7 +52,7 @@ $(document).ready(function () {
 
                 var searchData = [];
 
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < 1; i++) {
                         
                             var item = {
                             name : response.events[i].name.text,
@@ -61,6 +61,7 @@ $(document).ready(function () {
                             venueAddress : response.events[i].venue.address, 
                         }   
                         searchData.push(item);
+                        console.log(item);
                                
                 };
                 dataB.ref().push(searchData);
