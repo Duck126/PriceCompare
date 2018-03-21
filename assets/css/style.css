@@ -10,6 +10,7 @@
         margin: 0;
         padding: 0;
       }
+<<<<<<< HEAD
 
     .jumbotron{
       background: #EE6E73;
@@ -50,3 +51,11 @@
   btn{
     margin-top: 30px;
   }
+=======
+      .user-login{
+        width: 50%;
+        background-color:#cccccc;
+        margin-top: 10%;
+        margin-left: 10%;
+      }
+>>>>>>> 39f0d9f5e38821918e1bf6f326bb5fe3a752ef2d
