@@ -1,18 +1,19 @@
 $(document).ready(function () {
     //alert("working");
 
-    // Initialize Firebase
-    // var config = {
-    //     apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
-    //     authDomain: "price-compare-project-73cd9.firebaseapp.com",
-    //     databaseURL: "https://price-compare-project-73cd9.firebaseio.com",
-    //     projectId: "price-compare-project-73cd9",
-    //     storageBucket: "price-compare-project-73cd9.appspot.com",
-    //     messagingSenderId: "1037112672846"
-    // };
-    // firebase.initializeApp(config);
+    //  Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
+        authDomain: "price-compare-project-73cd9.firebaseapp.com",
+        databaseURL: "https://price-compare-project-73cd9.firebaseio.com",
+        projectId: "price-compare-project-73cd9",
+        storageBucket: "price-compare-project-73cd9.appspot.com",
+        messagingSenderId: "1037112672846"
+    };
+    
+    firebase.initializeApp(config);
 
-    // var dataB = firebase.database();
+    var dataB = firebase.database();
     var searchCounter = 0;
 
     //$("#action-1").click(function(e){
