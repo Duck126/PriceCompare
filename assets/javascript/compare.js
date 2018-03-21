@@ -1,18 +1,19 @@
 $(document).ready(function () {
     //alert("working");
 
-    var config = {
-        apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
-        authDomain: "price-compare-project-73cd9.firebaseapp.com",
-        databaseURL: "https://price-compare-project-73cd9.firebaseio.com",
-        projectId: "price-compare-project-73cd9",
-        storageBucket: "price-compare-project-73cd9.appspot.com",
-        messagingSenderId: "1037112672846"
-    };
-    firebase.initializeApp(config);
+    // Initialize Firebase
+    // var config = {
+    //     apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
+    //     authDomain: "price-compare-project-73cd9.firebaseapp.com",
+    //     databaseURL: "https://price-compare-project-73cd9.firebaseio.com",
+    //     projectId: "price-compare-project-73cd9",
+    //     storageBucket: "price-compare-project-73cd9.appspot.com",
+    //     messagingSenderId: "1037112672846"
+    // };
+    // firebase.initializeApp(config);
 
-    var dataB = firebase.database();
-    var eventFull = $("#eventFull");
+    // var dataB = firebase.database();
+    var searchCounter = 0;
 
     //$("#action-1").click(function(e){
         //do something
@@ -43,8 +44,8 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         })
-            .then(function (response) {
-                console.log(response);
+            .then(function(response) {
+                
 
                 //dataB.ref().push(response);
                 //var results = response.data();
@@ -85,16 +86,21 @@ $(document).ready(function () {
             
                     returnArr.push(displayItem);
 
-                });
-                console.log(returnArr);
-                return returnArr;
+                console.log(result);
+
+                dataB.ref().push({
+                    id: searchID,
+                    data: response.data
+                })
 
             });
 
 
     });
 
-})
+});
+
+});
 
 
                     //for (var i = 0; i < 10; i++) {
