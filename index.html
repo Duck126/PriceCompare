@@ -16,6 +16,12 @@
   
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
+    <!-- <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>-->
+
+        
+
+
+
         
     <script>
         // This example requires the Places library. Include the libraries=places
@@ -49,6 +55,7 @@
             });
         }
     </script>
+
     <title>EventFull</title>
 </head>
 
@@ -60,18 +67,24 @@
         <hr class="my-4">
         <p>This is and app that will help you find events that are going on in Austin.</p>
         <p class="lead">
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Keyword:</span>
                 </div>
-                <input type="text" id="keyword" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+
+                <input type="text" id="keyword" class="form-control" placeholder="">
               </div>
+
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Starting Location:</span>
                 </div>
-                <input type="text" id="loc-address" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-              </div>
+
+                <input type="text" id="loc-address" class="form-control" placeholder="">
+                </div>
+
                 <select class="form-control">
                     <option>Radius:</option>
                     <option val="1" id="1mi">1</option>
@@ -81,18 +94,40 @@
 
                   <select class="form-control">
                     <option>Date of Interest</option>
-                    <option>Today</option>
-                    <option>Tomorrow</option>
-                    <option>This Week</option>
-                    <option>Next Week</option>
-                    <option>This Month</option>
-                    <option>Next Month</option>
+                    <option val="today">Today</option>
+                    <option val="tomorrow">Tomorrow</option>
+                    <option val="this_week">This Week</option>
+                    <option val="next_week">Next Week</option>
+                    <option val="this_month">This Month</option>
+                    <option val="next_month">Next Month</option>
                   </select>
 
+            <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
+
+
                   <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
+
                 
         </p>
 
+    </div>
+    <div>
+        <div class="row">
+            <div col="col-5" width="50%">
+                <div id="search-results" class="card">
+
+                </div>
+            </div>
+            <div col="col-5" float="left" width="50%">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Cras justo odio</li>
+                     <li class="list-group-item">Dapibus ac facilisis in</li>
+                     <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
     </div>
 
     <div id="map"></div>
