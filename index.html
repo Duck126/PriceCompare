@@ -9,27 +9,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize css-->
+    <!--<link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/> -->
+  
+  
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-     <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>
-      <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>-->
+
+        
+
+
+
         
     <script>
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-            //i broke the map somehow!!! :( 
-    
-
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 30.2672, lng: -97.7431 },
                 zoom: 15
             });
-
             var infowindow = new google.maps.InfoWindow();
             var service = new google.maps.places.PlacesService(map);
-            
             service.getDetails({
                 placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
             }, function (place, status) {
@@ -43,59 +47,61 @@
                             'Place ID: ' + place.place_id + '<br>' +
                             place.formatted_address + '</div>');
                         infowindow.open(map, this);
-                        
                     });
                 }
             });
         }
     </script>
+
     <title>EventFull</title>
 </head>
 
 <body>
 
-        <div class="parallax-container">
-                <div class="parallax"><img src="assets/images/Austin-background.jpg"></div>
-              </div>
-              <div class="section white">
-                <div class="row container">
-                  <h2 class="header">Parallax</h2>
-                  <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-                </div>
-              </div>
-              <div class="parallax-container">
-                <div class="parallax"></div>
-              </div>
+  <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="user-view" style="height:200px;">
+          <div class="background">
+            <img class="flip" src="assets/images/logoEventF.png">
+          </div>
+          <!-- <a href="#"><img class="circle" src="assets/images/logoEventF.png"></a>
+          <a href="#"><span class="black-text name">EventFull</span></a>
+          <a href="#"><span class="black-text email">jdandturk@gmail.com</span></a> -->
+        </div>
+    </li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
     <div class="jumbotron">
-            <nav>
-                    <div class="nav-wrapper">
-                      <a href="#" class="brand-logo">Logo</a>
-                      <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
-                      </ul>
-                    </div>
-            </nav>
-        <h1 class="display-4">Eventfull</h1>
-        <p class="lead">This is and app that will help you find events that are going on in Austin.</p>
+        <h1 class="display-4 center-align vivify rollInLeft title">Eventfull</h1>
+        <p class="lead center-align ">This is and app that will help you find events that are going on in Austin.</p>
+        </div>
+        <div class="container">
         <hr class="my-4">
         <p>This is and app that will help you find events that are going on in Austin.</p>
-        <p class="lead">
-            <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
-            <div class="input-group mb-3">
+        <form class="lead">
+                <label for="name">Search for Event</label>
+                <input type="text" name="name" id="name" placeholder="">
+                <label for="name">Starting Location</label>
+                <input type="text" name="name" id="name" placeholder="">
+            <!-- <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Keyword:</span>
                 </div>
-                <input type="text" id="keyword" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                <input type="text" id="keyword" class="form-control" placeholder="">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Starting Location:</span>
                 </div>
                 <input type="text" id="loc-address" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-              </div>
+              </div> -->
                 <select class="form-control">
                     <option>Radius:</option>
                     <option val="1" id="1mi">1</option>
@@ -105,15 +111,17 @@
 
                   <select class="form-control">
                     <option>Date of Interest</option>
-                    <option>Today</option>
-                    <option>Tomorrow</option>
-                    <option>This Week</option>
-                    <option>Next Week</option>
-                    <option>This Month</option>
-                    <option>Next Month</option>
+                    <option val="today">Today</option>
+                    <option val="tomorrow">Tomorrow</option>
+                    <option val="this_week">This Week</option>
+                    <option val="next_week">Next Week</option>
+                    <option val="this_month">This Month</option>
+                    <option val="next_month">Next Month</option>
                   </select>
-                
-        </p>
+
+                  <button class="btn waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i> Submit</button>                
+                </form>
+
     </div>
 
     <div id="map"></div>
@@ -121,10 +129,14 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap">
+    </script>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/materialize.js"></script>
     <script type="text/javascript" src="assets/javascript/compare.js"></script>
+    <script type="text/javascript" src="assets/javascript/style.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
