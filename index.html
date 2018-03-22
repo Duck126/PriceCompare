@@ -11,16 +11,11 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize css-->
-    <!--<link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/> -->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/vivify.css">
   
   
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.2672,-97.7431&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0"></script>-->
-
-        
-
-
 
         
     <script>
@@ -55,7 +50,6 @@
             });
         }
     </script>
-
     <title>EventFull</title>
 </head>
 
@@ -97,10 +91,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Keyword:</span>
                 </div>
-
-                <input type="text" id="keyword" class="form-control" placeholder="">
+                <input type="text" id="keyword" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
               </div>
-
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">Starting Location:</span>
@@ -116,20 +108,20 @@
 
                   <select class="form-control">
                     <option>Date of Interest</option>
-                    <option val="today">Today</option>
-                    <option val="tomorrow">Tomorrow</option>
-                    <option val="this_week">This Week</option>
-                    <option val="next_week">Next Week</option>
-                    <option val="this_month">This Month</option>
-                    <option val="next_month">Next Month</option>
+                    <option>Today</option>
+                    <option>Tomorrow</option>
+                    <option>This Week</option>
+                    <option>Next Week</option>
+                    <option>This Month</option>
+                    <option>Next Month</option>
                   </select>
 
                   <button class="btn waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i> Submit</button>                
                 </form>
 
     </div>
-
-    <div id="map"></div>
+        <div id="map"></div>
+    
 
 
     <!-- Optional JavaScript -->
