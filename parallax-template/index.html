@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parallax Template - Materialize</title>
+  <title>EventFull</title>
 
   <!-- CSS  -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap"
@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" type="text/css" href="css/vivify.css">
   <script>
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
@@ -72,7 +73,7 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">logo</a>
+      <a id="logo-container" href="#" class="brand-logo"></a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="#">Navbar Link</a>
@@ -95,12 +96,9 @@
       <div class="container">
         <br>
         <br>
-        <h1 class="header center teal-text text-lighten-2">EventFull</h1>
+        <h1 class="header center  text-lighten-2 vivify rollInLeft">EventFull</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <h5 class="header col s12 light">This is an app that will help you find events that are going on in Austin.</h5>
         </div>
         <br>
         <br>
@@ -108,33 +106,19 @@
       </div>
     </div>
     <div class="parallax">
-      <img src="Austin-background.jpg" alt="Unsplashed background img 1">
+      <img src="images/Austin-background.jpg" alt="Unsplashed background img 1">
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-  <div id="map"></div>
-
+<section class="section">
   <div class="lead">
-
-
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Keyword:</span>
       </div>
       <input type="text" id="keyword" class="form-control" placeholder="">
     </div>
-
+  
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Starting Location:</span>
@@ -161,9 +145,11 @@
       <option id="next-month" val="next_month">Next Month</option>
     </select>
 
-    <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
+    <button class="btn btn-primary btn-lg waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i>Submit</button>
 
   </div>
+</section>
+<div id="map"></div>
 
 
 
@@ -172,12 +158,12 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"></h5>
         </div>
       </div>
     </div>
     <div class="parallax">
-      <img src="Austin-background2.jpg" alt="Unsplashed background img 3">
+      <img src="images/Austin-background2.jpg" alt="Unsplashed background img 3">
     </div>
   </div>
 

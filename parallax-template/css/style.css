@@ -7,6 +7,15 @@
  * Made By MaterializeCSS.com
  */
 
+ /* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -41,10 +50,23 @@ p {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   #index-banner .section {
     top: 0;
   }
+
+  .section{
+    position: relative;
+    margin-top: 600px;
+  }
+
+  #map{
+    margin: 50px 20px;
+    height: 40%;
+    width: 90%;
+    border: solid #C0ECAE 3px;
+  }
+  
 }
 
 .icon-block {
@@ -61,27 +83,69 @@ footer.page-footer {
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+.header{
+  color: #fff;
+}
 
+.logo{
+  height: 200px;
+  width: 200px;
+}
+
+.section{
+  position: absolute;
+  width: 100%
+}
+       
 #map {
+  margin: 50px 20px;
   height: 60%;
   width: 60%;
+  border: solid #C0ECAE 3px;
 }
 
 .lead{
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  width: 30%;
-  position: fixed;
-  right: 5%;
+  margin: 35px 20px;
+  width: 35%;
+  height: 300px;
+  position: relative;
+  float: right;
+}
+
+.lead input[type="text"]{
+  width: 100%;
+  height: 50px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border: none;
+  resize: vertical;
+  background: #F5F5F5; 
   
 }
 
-/* Optional: Makes the sample page fill the window. */
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.lead input[type="text"]:focus{
+  border: 3px solid rgb(199, 194, 194);
 }
+
+label{
+font-size: 20px;
+color: black
+}
+
+.form-control{
+width: 50%;
+float: left;
+}
+
+btn{
+margin-top: 30px;
+}
+
+form button{
+margin-top: 30px;
+}
+
