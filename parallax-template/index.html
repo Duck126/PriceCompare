@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap"
+    async defer></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <script>
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // 
+
+    var map;
+    var infowindow;
+
+    function initMap() {
+      var pyrmont = {
+        lat: 30.2672,
+        lng: -97.7431
+      };
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 15
+      });
+
+      infowindow = new google.maps.InfoWindow();
+      var service = new google.maps.places.PlacesService(map);
+
+      service.nearbySearch({
+        location: pyrmont,
+        radius: 2000000,
+        type: ['music']
+      }, callback);
+    }
+
+    function getEventLocation() {
+
+    }
+
+    function callback(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          createMarker(results[i]);
+          console.log(results[i]);
+        }
+      }
+    }
+
+    function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#">Navbar Link</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <a href="#">Navbar Link</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br>
+        <br>
+        <h1 class="header center teal-text text-lighten-2">EventFull</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br>
+        <br>
+
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="Austin-background.jpg" alt="Unsplashed background img 1">
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="map"></div>
+
+  <div class="lead">
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Keyword:</span>
+      </div>
+      <input type="text" id="keyword" class="form-control" placeholder="">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Starting Location:</span>
+      </div>
+
+      <input type="text" id="loc-address" class="form-control" placeholder="">
+    </div>
+
+    <select class="form-control" id="loc-with">
+      <option>Radius:</option>
+      <option id="1mi" val="1">1</option>
+      <option id="5mi" val="5">5</option>
+      <option id="10mi" val="10">10</option>
+      <option id="20mi" val="20">20</option>
+    </select>
+
+    <select class="form-control" id="start-date">
+      <option>Date of Interest</option>
+      <option id="today" val="today">Today</option>
+      <option id="tomorrow" val="tomorrow">Tomorrow</option>
+      <option id="this-week" val="this_week">This Week</option>
+      <option id="next-week" val="next_week">Next Week</option>
+      <option id="this-month" val="this_month">This Month</option>
+      <option id="next-month" val="next_month">Next Month</option>
+    </select>
+
+    <button class="btn btn-primary btn-lg" id="submit-button" role="button">Submit</button>
+
+  </div>
+
+
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="Austin-background2.jpg" alt="Unsplashed background img 3">
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support
+            and continue development on this project and is greatly appreciated.</p>
+
+
+
+          <div class="footer-copyright">
+            <div class="container">
+              Made by
+              <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+          </div>
+  </footer>
+
+
+  <!--  Scripts-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+</body>
+
+</html>
