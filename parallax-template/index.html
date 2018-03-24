@@ -7,8 +7,6 @@
   <title>EventFull</title>
 
   <!-- CSS  -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap"
-    async defer></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -78,7 +76,7 @@
       </a>
       <ul class="right hide-on-med-and-down">
         <li>
-          <a href="#">Navbar Link</a>
+          <a href="#">Welcome</a>
         </li>
       </ul>
 
@@ -149,9 +147,18 @@
       <option id="next-month" val="next_month">Next Month</option>
     </select>
 
-    <button class="btn btn-primary btn-lg waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i>Submit</button>
+    <button style="background:#2BBBAD" class="btn btn-primary btn-lg waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i>Submit</button>
 
   </div>
+    <div id="data-wrapper" class="data-display row">
+      <div class="col-9">
+              <div id="list-anchor" class="list-group" class="scrollspy"></div>    
+      </div>
+      <div class="col-2 event-btn">
+              <div id="list-display" data-spy="scroll" data-target="#list-anchor" data-offset="0" class="scrollspy"></div>
+      </div>
+    </div>
+
   <div id="map"></div>
 
 
@@ -191,7 +198,13 @@
 
 
   <!--  Scripts-->
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0&libraries=places&callback=initMap" async defer></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/compare.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

@@ -92,11 +92,10 @@ footer.page-footer {
 }
 
 .logo{
-  height: 150px;
-  width: 150px;
-  position: absolute;
-  left: 5px;
-  top: 10px;
+  height: 125px;
+  width: 125px;
+  float: left;
+
 
 }
 
@@ -157,5 +156,24 @@ margin-top: 20px;
 margin-bottom: 40px;
 padding: 10px;
 }
+
+.data-display{
+  background: rgba(223, 173, 173, 0.295);
+  border: solid #C0ECAE 3px; 
+  border-radius: 10px;
+  height: 400px;
+  width: 50%;
+  margin: 0px 30px 0px 0px;
+  position: absolute;
+  right: 40px;
+  top: 60%;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.white{
+  height: 110px;
+}
+
 
 
