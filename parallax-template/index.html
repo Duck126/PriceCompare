@@ -13,6 +13,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" type="text/css" href="css/vivify.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script>
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
@@ -73,7 +74,8 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"></a>
+      <a id="logo-container" href="#" class="brand-logo"><img class="logo" src="images/logo.png">
+      </a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="#">Navbar Link</a>
@@ -110,7 +112,7 @@
     </div>
   </div>
 
-<section class="section">
+  
   <div class="lead">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -126,6 +128,8 @@
 
       <input type="text" id="loc-address" class="form-control" placeholder="">
     </div>
+
+    
 
     <select class="form-control" id="loc-with">
       <option>Radius:</option>
@@ -148,8 +152,8 @@
     <button class="btn btn-primary btn-lg waves-effect waves-light" id="submit-button" role="button"><i class="material-icons right">send</i>Submit</button>
 
   </div>
-</section>
-<div id="map"></div>
+  <div id="map"></div>
+
 
 
 

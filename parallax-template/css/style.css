@@ -40,6 +40,10 @@ p {
   width: 100%;
 }
 
+.nav-wrappper{
+  height: 300px;
+}
+
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
@@ -88,20 +92,26 @@ footer.page-footer {
 }
 
 .logo{
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+
 }
 
-.section{
+/* .section{
   position: absolute;
   width: 100%
-}
+} */
        
 #map {
-  margin: 50px 20px;
-  height: 60%;
-  width: 60%;
-  border: solid #C0ECAE 3px;
+  /* margin: 50px 20px;*/
+  height: 60%; 
+  width: 100%;
+  z-index: 10;
+  margin: 20% 0px 20px 0px;
+  border: solid #C0ECAE 3px; 
 }
 
 .lead{
@@ -109,7 +119,7 @@ footer.page-footer {
   width: 35%;
   height: 300px;
   position: relative;
-  float: right;
+  /* float: right; */
 }
 
 .lead input[type="text"]{
@@ -139,13 +149,13 @@ color: black
 .form-control{
 width: 50%;
 float: left;
+margin: 10px 0px;
 }
 
-btn{
-margin-top: 30px;
+.btn{
+margin-top: 20px;
+margin-bottom: 40px;
+padding: 10px;
 }
 
-form button{
-margin-top: 30px;
-}
 
