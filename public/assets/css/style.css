@@ -172,6 +172,7 @@ body {
 
 #list-display {
   width: 70%;
+  visibility: hidden;
 }
 .lead{
   background-color: #cccc;
