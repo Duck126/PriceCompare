@@ -168,10 +168,12 @@ body {
 
 #list-anchor {
   margin: 10px;
+  
 }
 
 #list-display {
   width: 70%;
+  visibility: hidden;
 }
 .lead{
   background-color: #cccc;
