@@ -4,7 +4,7 @@ function initMap() {
         lng: -97.7431
     };
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
         center: austin,
         zoom: 12,
         styles: [{
@@ -190,17 +190,20 @@ function initMap() {
     });
 
     infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
+    service = new google.maps.places.PlacesService(map);
 
     service.nearbySearch({
         location: austin,
         radius: 1000000,
         type: ['music']
     }, function () {});
-}
+};
 
-$(document).ready(function () {
+
+
+$(document).ready(function (initMap) {
     //alert("working");
+    initMap();
 
     var config = {
         apiKey: "AIzaSyBNSBALDx4nwVVXPZmiHCgC3_Nvvbg-Vc8",
@@ -215,7 +218,7 @@ $(document).ready(function () {
     var dataB = firebase.database();
     var searchData = [];
 
-    $("#submit-button").on("click", function (e) {
+    $("#submit-button").on("click", function (e, map) {
         e.preventDefault();
         $("#inputs").empty();
         var userKeyword = $("#keyword").val().trim();
@@ -252,83 +255,109 @@ $(document).ready(function () {
         //console.log(queryURL);
 
         $.ajax({
-                url: queryURL,
-                method: "GET"
+            url: queryURL,
+            method: "GET"
 
-            })
+        }).then(function (response) {
+            console.log(map);
 
-            .then(function (response) {
-                //console.log(response, map);
+            let googleInput = [];
+            let number = 0;
+            var searchDataLong = [];
+            var searchDataLat = [];
+            let googleinput = [];
 
+            for (var i = 0; i < 11; i++) {
 
-
-                let googleInput = [];
-                let number = 0;
-                var searchDataLong = [];
-                var searchDataLat = [];
-                let googleinput = [];
-
-                for (var i = 0; i < 11; i++) {
-
-                    let item = {
-                        name: response.events[i].name.text,
-                        startDateAndTime: response.events[i].start.local,
-                        venueName: response.events[i].venue.name,
-                        venueAddress: response.events[i].venue.address,
-                    }
-
-                    let location = {
-                        latitude: response.events[i].venue.address.latitude,
-                        longitude: response.events[i].venue.address.longitude,
-                    }
-
-
-
-                    console.log(item);
-                    console.log(searchData);
-
-                    let time = moment(item.startDateAndTime).format("dddd, MMMM Do, h:mm a");
-                    $("#list-anchor").append("<h4 id='list-item-" + number++ + "'>" + item.name + "</h4><p>" + time + "<br >" + item.venueName + "</p <hr>");
-                    $("#list-display").append("<a class='list-group-item list-group-item-action' href='list-item-" + number + "'> event </a>");
-
-                    console.log(number, "number");
-
-                    let thisEvent = response.events[i];
-
-                    var marker = new google.maps.Marker({
-                        position: {
-                            lat: parseFloat(thisEvent.venue.address.latitude),
-                            lng: parseFloat(thisEvent.venue.address.longitude)
-                        },
-
-                        label: JSON.stringify(number),
-                        map: map,
-                        title: 'Hello World!'
-
-                    });
-
-                    searchData.push(item);
-                    googleInput.push(location);
-
+                var item = {
+                    name: response.events[i].name.text,
+                    startDateAndTime: response.events[i].start.local,
+                    venueName: response.events[i].venue.name,
+                    venueAddress: response.events[i].venue.address,
                 };
-                dataB.ref().push(searchData);
 
-            });
+                var location = {
+                    latitude: response.events[i].venue.address.latitude,
+                    longitude: response.events[i].venue.address.longitude,
+                };
+
+                console.log(location);
+
+                //console.log(item);
+                //console.log(searchData);
+
+                let time = moment(item.startDateAndTime).format("dddd, MMMM Do, h:mm a");
+                $("#list-anchor").append("<h4 id='list-item-" + number++ + "'>" + item.name + "</h4><p>" + time + "<br >" + item.venueName + "</p <hr>");
+                $("#list-display").append("<a class='list-group-item list-group-item-action' href='list-item-" + number + "'> event </a>");
+
+                //console.log(number, "number");
+
+                let thisEvent = response.events[i];
+
+                console.log(thisEvent);
+
+                // Standard google maps function
+                // function initialize() {
+                //     var myLatlng = new google.maps.LatLng(40.779502, -73.967857);
+                //     var myOptions = {
+                //         zoom: 12,
+                //         center: myLatlng,
+                //         mapTypeId: google.maps.MapTypeId.ROADMAP
+                //     }
+                //     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                // }
+
+                // // Function for adding a marker to the page.
+                // function addMarker(location) {
+                //     marker = new google.maps.Marker({
+                //         position: location,
+                //         map: map
+                //     });
+                // }
+
+                // // Testing the addMarker function
+                // CentralPark = new google.maps.LatLng(37.7699298, -122.4469157);
+                // addMarker(CentralPark);
+
+                    var latt = parseFloat(location.latitude);
+                    var long = parseFloat(location.longitude);
+
+                function addMarker(latt, long, map) {
+                    marker = new google.maps.Marker({
+                        position: {
+                            lat: latt,
+                            lng: long
+                            // lat: parseFloat(thisEvent.venue.address.latitude),
+                            // lng: parseFloat(thisEvent.venue.address.longitude)
+                        },
+                        setMap: map
+                    });
+                };
+
+                var mapMarkers = new google.maps.LatLng(latt, long);
+
+                addMarker(latt, long, map);
+
+                // var marker = new google.maps.Marker({
+                //     position: {
+                //         lat: parseFloat(thisEvent.venue.address.latitude),
+                //         lng: parseFloat(thisEvent.venue.address.longitude)
+                //     },
+
+                //     label: JSON.stringify(number),
+                //     map: map,
+                //     title: 'Hello World!'
+
+                // });
+
+                searchData.push(item);
+                googleInput.push(location);
+
+            };
+            dataB.ref().push(searchData);
+
+        });
 
     });
 
-})
-
-
-
-//AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw
-//AIzaSyCttHUx3kXeV6l4jUMIw8jL5ZhrNhafsO0 - Google APIKey
-
-//https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=YOUR_API_KEY
-//https://maps.googleapis.com/maps/api/place/details/output?parameters
-//*var urlPlaces = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDdHwuSi6AbQZbktOwjTx4Nz3kINmLI2fw";
-
-
-//dataB.ref().push(response);
-//var results = response.data();
-//console.log(results);
+});
